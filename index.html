@@ -7,42 +7,44 @@
   <title>Carlos Mejía | Creative Editor / Paid Social Video Editor</title>
   <meta name="description" content="Editor de video para Reels/TikTok/Ads enfocado en performance: hooks, ritmo, subtítulos y variantes A/B. ~80 piezas/mes." />
 
-  <!-- Open Graph (opcional, pero útil para compartir) -->
-  <meta property="og:title" content="Carlos Mejía | Creative Editor / Paid Social Video Editor" />
-  <meta property="og:description" content="Editor de video para Reels/TikTok/Ads enfocado en performance: hooks, ritmo, subtítulos y variantes A/B. ~80 piezas/mes." />
-  <meta property="og:type" content="website" />
-
   <style>
     :root{
-      --bg:#0b0d10;
-      --card:#0f1217;
-      --text:#eef2f6;
-      --muted:#aab4c0;
-      --line:rgba(255,255,255,.12);
-      --accent:#6ee7ff;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1100px;
+      --bg:#ffffff;
+      --card:#ffffff;
+      --text:#0b0d10;
+      --muted:#556170;
+      --line:rgba(11,13,16,.12);
+      --soft:rgba(11,13,16,.04);
+      --accent:#0b63ff;
+      --radius:18px;
+      --max:1100px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 10% 0%, rgba(110,231,255,.10), transparent 55%),
-                  radial-gradient(900px 500px at 90% 15%, rgba(167,139,250,.10), transparent 55%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial;
+      background: var(--bg);
       color:var(--text);
       line-height:1.6;
     }
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
     .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0 26px;
+      position: sticky; top:0; z-index: 20;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
     }
-    .brand{font-weight:700; letter-spacing:.2px}
-    .nav{display:flex; gap:10px; flex-wrap:wrap}
+    .topbarInner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      padding:12px 22px;
+      max-width:var(--max);
+      margin:0 auto;
+    }
+    .brand{font-weight:800; letter-spacing:.2px}
+    .nav{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
     .chip{
       border:1px solid var(--line);
       padding:8px 12px;
@@ -50,18 +52,19 @@
       text-decoration:none;
       color:var(--muted);
       font-size:14px;
+      background: transparent;
     }
-    .chip:hover{border-color:rgba(255,255,255,.25); color:var(--text)}
-    .hero{padding:26px 0 10px}
-    .kicker{color:var(--muted); font-size:14px; letter-spacing:.25px}
+    .chip:hover{border-color:rgba(11,13,16,.22); color:var(--text)}
+    .hero{padding:34px 0 10px}
+    .kicker{color:var(--muted); font-size:14px}
     h1{
       margin:10px 0 10px;
-      font-size: clamp(30px, 4.2vw, 56px);
+      font-size: clamp(30px, 4.1vw, 56px);
       line-height:1.08;
-      letter-spacing:-.8px;
+      letter-spacing:-.9px;
     }
     .sub{
-      max-width: 62ch;
+      max-width: 64ch;
       color:var(--muted);
       font-size: clamp(16px, 1.6vw, 18px);
       margin:0 0 18px;
@@ -69,13 +72,13 @@
     .badges{display:flex; gap:10px; flex-wrap:wrap; margin:18px 0 22px}
     .badge{
       border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
+      background: var(--soft);
       padding:8px 12px;
       border-radius:999px;
       font-size:13px;
       color:var(--text);
     }
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin:10px 0 40px}
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin:10px 0 0}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       gap:10px;
@@ -83,19 +86,18 @@
       border-radius:999px;
       text-decoration:none;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
+      background: transparent;
       color:var(--text);
-      font-weight:600;
-      box-shadow:none;
+      font-weight:700;
       transition: transform .08s ease, border-color .2s ease, background .2s ease;
       min-height:44px;
     }
-    .btn:hover{transform: translateY(-1px); border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.04)}
+    .btn:hover{transform: translateY(-1px); border-color: rgba(11,13,16,.22); background: var(--soft)}
     .btn.primary{
-      background: linear-gradient(180deg, rgba(110,231,255,.18), rgba(110,231,255,.08));
-      border-color: rgba(110,231,255,.35);
+      background: rgba(11,99,255,.10);
+      border-color: rgba(11,99,255,.28);
     }
-    .btn.primary:hover{border-color: rgba(110,231,255,.55)}
+
     .section{padding:56px 0}
     .sectionTitle{
       display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
@@ -103,31 +105,72 @@
     }
     h2{margin:0; font-size:22px; letter-spacing:-.3px}
     .sectionHint{margin:0; color:var(--muted); font-size:14px}
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
+
+    .toolbar{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin: 10px 0 14px;
     }
+    .input{
+      flex:1;
+      min-width: 220px;
+      padding:12px 14px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      outline: none;
+    }
+    .input:focus{border-color: rgba(11,99,255,.40)}
+    .metaRow{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid{display:grid; grid-template-columns: 1fr; gap:12px}
     @media (min-width: 720px){
       .grid.work{grid-template-columns: repeat(3, 1fr)}
       .grid.services{grid-template-columns: repeat(3, 1fr)}
       .grid.contact{grid-template-columns: repeat(3, 1fr)}
     }
+
     .card{
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      background: var(--card);
       border-radius: var(--radius);
       padding:16px;
-      box-shadow: none;
+      transition: transform .08s ease, border-color .2s ease;
     }
-    .card:hover{border-color:rgba(255,255,255,.22)}
+    .card:hover{border-color: rgba(11,13,16,.22); transform: translateY(-1px)}
+
     .workCard{
       display:flex; flex-direction:column; gap:10px;
       text-decoration:none;
-      min-height: 120px;
+      min-height: 168px;
       position:relative;
+      overflow:hidden;
     }
-    .workBrand{font-weight:700; letter-spacing:.2px}
+    .thumb{
+      height: 86px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(11,99,255,.16), transparent 55%),
+        linear-gradient(0deg, rgba(11,13,16,.03), rgba(11,13,16,.01));
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .thumb::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(0deg, rgba(0,0,0,.10), transparent 60%);
+      opacity: 0;
+      transition: opacity .2s ease;
+    }
+    .workCard:hover .thumb::after{opacity:1}
+
+    .workBrand{font-weight:800; letter-spacing:.2px}
     .workMeta{color:var(--muted); font-size:14px}
     .ext{
       position:absolute; right:14px; top:14px;
@@ -136,23 +179,23 @@
       border-radius:999px;
       padding:4px 10px;
       font-size:12px;
-      background: rgba(0,0,0,.12);
+      background: rgba(255,255,255,.85);
     }
-    .serviceTitle{font-weight:700; margin:0 0 8px}
-    .serviceText{margin:0; color:var(--muted)}
-    .about{
-      max-width: 70ch;
+    .status{
+      font-size: 12px;
       color: var(--muted);
-      font-size: 16px;
-      margin: 0;
     }
+
+    .serviceTitle{font-weight:800; margin:0 0 8px}
+    .serviceText{margin:0; color:var(--muted)}
+    .about{max-width: 70ch; color: var(--muted); font-size: 16px; margin:0}
     .contactBtn{
       width:100%;
       justify-content:center;
       font-size:16px;
       padding:14px 16px;
       border-radius: 16px;
-      background: rgba(255,255,255,.03);
+      background: var(--card);
     }
     .footer{
       border-top:1px solid var(--line);
@@ -160,15 +203,17 @@
       color:var(--muted);
       font-size:14px;
     }
-    .mutedLink{color:var(--muted); text-decoration:none; border-bottom:1px dashed rgba(255,255,255,.20)}
-    .mutedLink:hover{color:var(--text); border-bottom-color:rgba(255,255,255,.35)}
+    :focus-visible{
+      outline: 3px solid rgba(11,99,255,.28);
+      outline-offset: 3px;
+      border-radius: 12px;
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <!-- Topbar -->
-    <header class="topbar">
+  <header class="topbar">
+    <div class="topbarInner">
       <div class="brand">Carlos Mejía</div>
       <nav class="nav">
         <a class="chip" href="#trabajo">Trabajo</a>
@@ -176,8 +221,10 @@
         <a class="chip" href="#sobre">Sobre mí</a>
         <a class="chip" href="#contacto">Contacto</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
+  <div class="wrap">
     <!-- Hero -->
     <main class="hero">
       <div class="kicker">Lima, Perú · Disponible remoto</div>
@@ -206,54 +253,25 @@
     <section class="section" id="trabajo">
       <div class="sectionTitle">
         <h2>Trabajo</h2>
-        <p class="sectionHint">Ejemplos reales (Reels 9:16)</p>
+        <p class="sectionHint">Portafolio (Reels) — preview automático cuando sea posible</p>
       </div>
 
-      <div class="grid work">
-        <a class="card workCard" href="https://www.instagram.com/gruposocopur/reel/DQKXWTxkd8w/" target="_blank" rel="noopener noreferrer">
-          <span class="ext">↗</span>
-          <div class="workBrand">Grupo Socopur</div>
-          <div class="workMeta">Reel 9:16</div>
-        </a>
-
-        <a class="card workCard" href="https://www.instagram.com/gruposocopur/reel/DPHOjz8EU_5/" target="_blank" rel="noopener noreferrer">
-          <span class="ext">↗</span>
-          <div class="workBrand">Grupo Socopur</div>
-          <div class="workMeta">Reel 9:16</div>
-        </a>
-
-        <a class="card workCard" href="https://www.instagram.com/ktm_peru/reel/DPo4rl6DXXs/" target="_blank" rel="noopener noreferrer">
-          <span class="ext">↗</span>
-          <div class="workBrand">KTM Perú</div>
-          <div class="workMeta">Reel 9:16</div>
-        </a>
-
-        <a class="card workCard" href="https://www.instagram.com/triumph_peru/reel/DAJ6sy6ocuW/" target="_blank" rel="noopener noreferrer">
-          <span class="ext">↗</span>
-          <div class="workBrand">Triumph Perú</div>
-          <div class="workMeta">Reel 9:16</div>
-        </a>
-
-        <a class="card workCard" href="https://www.instagram.com/triumph_peru/reel/DCpqjWGSP9q/" target="_blank" rel="noopener noreferrer">
-          <span class="ext">↗</span>
-          <div class="workBrand">Triumph Perú</div>
-          <div class="workMeta">Reel 9:16</div>
-        </a>
-
-        <!-- Tarjeta extra (opcional) para completar 6 -->
-        <a class="card workCard" href="#contacto">
-          <span class="ext">→</span>
-          <div class="workBrand">Más ejemplos</div>
-          <div class="workMeta">Carpeta privada / bajo pedido</div>
-        </a>
+      <div class="toolbar">
+        <input class="input" id="search" type="search" placeholder="Buscar marca… (ej: KTM, Triumph)" aria-label="Buscar marca" />
+        <div class="metaRow">
+          <span id="count"></span>
+          <span class="status" id="status"></span>
+        </div>
       </div>
+
+      <div class="grid work" id="workGrid"></div>
     </section>
 
     <!-- Servicios -->
     <section class="section" id="servicios">
       <div class="sectionTitle">
         <h2>Servicios</h2>
-        <p class="sectionHint">Edición pensada para performance</p>
+        <p class="sectionHint">Edición orientada a resultados</p>
       </div>
 
       <div class="grid services">
@@ -292,34 +310,19 @@
     <section class="section" id="contacto">
       <div class="sectionTitle">
         <h2>Contacto</h2>
-        <p class="sectionHint">Botones grandes (tap-friendly)</p>
+        <p class="sectionHint">Botones grandes</p>
       </div>
 
-      <p class="sub" style="margin-top:0">
-        Si necesitas un editor para volumen + performance, hablemos.
-      </p>
+      <p class="sub" style="margin-top:0">Si necesitas un editor para volumen + performance, hablemos.</p>
 
       <div class="grid contact">
-        <!-- WhatsApp: reemplaza 519XXXXXXXX por tu número con código país, sin + ni espacios -->
-        <a class="btn contactBtn primary" href="https://wa.me/519XXXXXXXX?text=Hola%20Carlos,%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20edición%20para%20Reels/Ads." target="_blank" rel="noopener noreferrer">
-          WhatsApp
-        </a>
-
-        <!-- Email: reemplaza el correo -->
-        <a class="btn contactBtn" href="mailto:TU_CORREO@correo.com?subject=Edición%20Paid%20Social%20-%20Consulta&body=Hola%20Carlos,%0D%0AVi%20tu%20portafolio%20y%20quiero%20hablar%20sobre%20un%20proyecto.%0D%0A">
-          Email
-        </a>
-
-        <!-- LinkedIn: reemplaza el link -->
-        <a class="btn contactBtn" href="https://www.linkedin.com/in/TU-USUARIO/" target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
+        <a class="btn contactBtn primary" id="waBtn" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="btn contactBtn" id="mailBtn" href="#">Email</a>
+        <a class="btn contactBtn" id="liBtn" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
 
-      <!-- Instagram opcional -->
-      <p style="margin:16px 0 0; color:var(--muted); font-size:14px;">
-        Instagram (opcional):
-        <a class="mutedLink" href="https://instagram.com/TU_IG" target="_blank" rel="noopener noreferrer">instagram.com/TU_IG</a>
+      <p class="sectionHint" style="margin-top:12px">
+        Instagram (opcional): <a id="igLink" href="#" target="_blank" rel="noopener noreferrer">—</a>
       </p>
     </section>
 
@@ -327,5 +330,216 @@
       © 2025 Carlos Mejía · Creative Editor / Paid Social Video Editor · Lima, Perú
     </footer>
   </div>
+
+  <script>
+    // =========================
+    // 1) DATA: tus links
+    // =========================
+    const REELS = [
+      "https://www.instagram.com/gruposocopur/reel/DQKXWTxkd8w/",
+      "https://www.instagram.com/husqvarnamotorcyclespe/reel/DSLGtqeicHm/",
+      "https://www.instagram.com/gruposocopur/reel/DQfTC8yEa90/",
+      "https://www.instagram.com/ktm_peru/reel/DPo4rl6DXXs/",
+      "https://www.instagram.com/gruposocopur/reel/DPHOjz8EU_5/",
+      "https://www.instagram.com/ktm_peru/reel/DR28UA4Db-o/",
+      "https://www.instagram.com/ktm_peru/reel/DRnfFQXEuwg/",
+      "https://www.instagram.com/ktm_peru/reel/DQPdMacjct5/",
+      "https://www.instagram.com/ktm_peru/reel/DPkKhN0jZS6/",
+      "https://www.instagram.com/triumph_peru/reel/DAJ6sy6ocuW/",
+      "https://www.instagram.com/triumph_peru/reel/DAmR9DkomdJ/",
+      "https://www.instagram.com/triumph_peru/reel/DCpqjWGSP9q/",
+      "https://www.instagram.com/reel/DPpQvA8kSiW/",
+      "https://www.instagram.com/reel/DPFbWX4jQzb/",
+      "https://www.instagram.com/reel/DP7UBXfkbSJ/",
+      "https://www.instagram.com/reel/DRxuvNLkUl0/",
+      "https://www.instagram.com/reel/CxoemJtI_ut/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+    ];
+
+    // Map de handles -> nombre bonito (puedes ampliar)
+    const BRAND_MAP = {
+      "gruposocopur": "Grupo Socopur",
+      "ktm_peru": "KTM Perú",
+      "triumph_peru": "Triumph Perú",
+      "husqvarnamotorcyclespe": "Husqvarna Motorcycles PE"
+    };
+
+    // =========================
+    // 2) Helpers
+    // =========================
+    function parseInstagramBrand(url){
+      try{
+        const u = new URL(url);
+        const parts = u.pathname.split("/").filter(Boolean); // e.g. ["ktm_peru","reel","DPo4..."]
+        // Si viene /reel/XXXX sin handle
+        if (parts[0] === "reel") return "Reel (sin marca)";
+        const handle = parts[0] || "";
+        return BRAND_MAP[handle] || handle.replaceAll("_"," ");
+      }catch(e){
+        return "Reel";
+      }
+    }
+
+    function cleanUrl(url){
+      // Quita utm/igsh para evitar duplicados / más limpio
+      try{
+        const u = new URL(url);
+        u.search = "";
+        return u.toString();
+      }catch(e){
+        return url;
+      }
+    }
+
+    // Lee HTML vía proxy texto y extrae og:image
+    async function fetchOgImage(targetUrl){
+      const clean = cleanUrl(targetUrl);
+      // r.jina.ai devuelve el HTML como texto plano (suele permitir CORS)
+      const proxy = "https://r.jina.ai/http://r.jina.ai/https://" + clean.replace("https://","").replace("http://","");
+      const res = await fetch(proxy, { method: "GET" });
+      if(!res.ok) throw new Error("fetch failed");
+      const txt = await res.text();
+
+      // Busca meta og:image (varias variantes)
+      const patterns = [
+        /property=["']og:image["'][^>]*content=["']([^"']+)["']/i,
+        /name=["']og:image["'][^>]*content=["']([^"']+)["']/i
+      ];
+
+      for (const p of patterns){
+        const m = txt.match(p);
+        if (m && m[1]) return m[1];
+      }
+
+      // fallback: twitter:image
+      const tw = txt.match(/name=["']twitter:image["'][^>]*content=["']([^"']+)["']/i);
+      if (tw && tw[1]) return tw[1];
+
+      throw new Error("no og:image");
+    }
+
+    // =========================
+    // 3) Render grid
+    // =========================
+    const grid = document.getElementById("workGrid");
+    const search = document.getElementById("search");
+    const count = document.getElementById("count");
+    const status = document.getElementById("status");
+
+    const items = REELS.map((url, idx) => {
+      const clean = cleanUrl(url);
+      const brand = parseInstagramBrand(clean);
+      return {
+        id: idx + 1,
+        url: clean,
+        brand,
+        type: "Reel 9:16"
+      };
+    });
+
+    function cardTemplate(item){
+      const a = document.createElement("a");
+      a.className = "card workCard";
+      a.href = item.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.dataset.brand = item.brand.toLowerCase();
+
+      a.innerHTML = `
+        <span class="ext">↗</span>
+        <div class="thumb" data-thumb="1" aria-label="Miniatura"></div>
+        <div class="workBrand">${item.brand}</div>
+        <div class="workMeta">${item.type}</div>
+      `;
+      return a;
+    }
+
+    function render(list){
+      grid.innerHTML = "";
+      list.forEach(item => grid.appendChild(cardTemplate(item)));
+      count.textContent = `${list.length} piezas`;
+    }
+
+    function applySearch(){
+      const q = (search.value || "").toLowerCase().trim();
+      const filtered = !q ? items : items.filter(x => x.brand.toLowerCase().includes(q));
+      render(filtered);
+      hydrateThumbs(); // reintenta thumbs en lo que queda visible
+    }
+
+    // =========================
+    // 4) Thumb hydration (OG)
+    // =========================
+    let running = 0;
+    const MAX_CONCURRENT = 3; // no spamear
+
+    async function hydrateThumbForCard(card){
+      const url = card.href;
+      const thumb = card.querySelector(".thumb");
+      if (!thumb || thumb.dataset.loaded === "1") return;
+
+      // placeholder “cargando”
+      thumb.dataset.loaded = "0";
+
+      try{
+        const img = await fetchOgImage(url);
+        thumb.style.backgroundImage = `url("${img}")`;
+        thumb.style.backgroundSize = "cover";
+        thumb.style.backgroundPosition = "center";
+        thumb.dataset.loaded = "1";
+      }catch(e){
+        // fallback: deja el gradient y marca como fallback
+        thumb.dataset.loaded = "1";
+      }
+    }
+
+    async function hydrateThumbs(){
+      const cards = Array.from(document.querySelectorAll(".workCard"));
+      status.textContent = "Cargando previews…";
+
+      // Cola simple con concurrencia limitada
+      let i = 0;
+      const workers = new Array(MAX_CONCURRENT).fill(0).map(async () => {
+        while(i < cards.length){
+          const card = cards[i++];
+          await hydrateThumbForCard(card);
+        }
+      });
+
+      await Promise.all(workers);
+      status.textContent = "Previews listos (si IG los permite).";
+      setTimeout(() => status.textContent = "", 2500);
+    }
+
+    // =========================
+    // 5) Contact config
+    // =========================
+    const WHATSAPP = "519XXXXXXXX"; // <-- cambia
+    const EMAIL = "TU_CORREO@correo.com"; // <-- cambia
+    const LINKEDIN = "https://www.linkedin.com/in/TU-USUARIO/"; // <-- cambia
+    const IG = "https://instagram.com/TU_IG"; // <-- cambia o deja vacío
+
+    const waBtn = document.getElementById("waBtn");
+    const mailBtn = document.getElementById("mailBtn");
+    const liBtn = document.getElementById("liBtn");
+    const igLink = document.getElementById("igLink");
+
+    waBtn.href = `https://wa.me/${WHATSAPP}?text=Hola%20Carlos,%20vi%20tu%20portafolio%20y%20quiero%20cotizar%20edición%20para%20Reels/Ads.`;
+    mailBtn.href = `mailto:${EMAIL}?subject=Edición%20Paid%20Social%20-%20Consulta&body=Hola%20Carlos,%0D%0AVi%20tu%20portafolio%20y%20quiero%20hablar%20sobre%20un%20proyecto.%0D%0A`;
+    liBtn.href = LINKEDIN;
+
+    if (IG && !IG.includes("TU_IG")){
+      igLink.href = IG;
+      igLink.textContent = IG.replace("https://","").replace("http://","");
+    } else {
+      igLink.href = "#";
+      igLink.textContent = "—";
+      igLink.addEventListener("click", (e)=>e.preventDefault());
+    }
+
+    // init
+    render(items);
+    hydrateThumbs();
+    search.addEventListener("input", applySearch);
+  </script>
 </body>
 </html>
